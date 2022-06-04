@@ -1,24 +1,40 @@
 {% extends 'layout.html' %}
 
+{% block title %}
+<title>{{ title }}</title>
+{% endblock title %}
+
 {% block content %}
 <div class="container">
 
     <div class="h2 text-center my-4">
-        Title
+        Dogs
     </div>
     <div class="row my-4 text-center">
 
         {% for dog in dogs %}
-        <div class="col-md-4 p-4">
+        <div class="col-lg-4 p-4">
             <div class="card card-project">
-                <div class="h6 my-2">{{ dog.name }}</div>
-                <img src="/static/{{ dog.img_url }}" alt="" class="card-img-top">
+                <div class="h5 my-2">{{ dog.name }}</div>
+                <img src="/static/{{ dog.img_url }}" alt="{{ dog.long_breed }}" class="card-img-top">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <p class='my-2'>{{ dog.long_breed | capfirst }}</p>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <p class="my-2">{{ dog.weight }} Kg</p>
+                    </div>
+
+                </div>
+
             </div>
             
         </div>
         {% endfor %}
         
-        {% for project in projects %}
+        <!-- {% for project in projects %}
         <div class="col-md-4 p-4">
             <div class="card bg-black card-project">
             <img src="{{project.image.url }}" class="card-img-top" />
@@ -35,7 +51,7 @@
             </div>
             </div>
         </div>
-        {% endfor %}
+        {% endfor %} -->
     </div>
 </div>
 

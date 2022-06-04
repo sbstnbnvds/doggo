@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="h2 text-center my-4">
+        Title
+    </div>
+    <div class="row my-4 text-center">
+
+        {% for dog in dogs %}
+        <div class="col-md-4 p-4">
+            <div class="card card-project">
+                <div class="h6 my-2">{{ dog.name }}</div>
+                <img src="/static/{{ dog.img_url }}" alt="" class="card-img-top">
+            </div>
+            
+        </div>
+        {% endfor %}
+        
+        {% for project in projects %}
+        <div class="col-md-4 p-4">
+            <div class="card bg-black card-project">
+            <img src="{{project.image.url }}" class="card-img-top" />
+        
+            <div class="card-body">
+        
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.description }}</p>
+        
+                {% if project.url %}
+                <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="__blank" rel="noreferrer">Visit the
+                Project</a>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

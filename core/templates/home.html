@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        
+        <div class="col-md-8 ">
+            <div class="h1">
+                Dogs
+            </div>
+            <div class="p">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Beatae magni ullam ab nostrum nulla dicta, nobis non dignissimos inventore vel eligendi quibusdam alias totam excepturi deleniti enim explicabo optio tempora rem quod? 
+                Quidem, rem consequuntur beatae inventore dolor soluta iste sequi necessitatibus repudiandae. 
+                Soluta nostrum ex vel, inventore officiis neque velit aperiam? 
+                Earum accusamus cupiditate eveniet id, omnis numquam? 
+                Id qui, eaque distinctio dolor alias asperiores magni ullam voluptate, commodi quasi, magnam ipsam rem architecto voluptas esse in! 
+                Earum similique cumque quaerat, iste labore enim tenetur expedita ipsam et est facilis illo odit quibusdam facere eaque aspernatur nulla dignissimos eveniet.
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'home.jpeg' %}" alt="dog-home" class="img-fluid">
+            </div>    
+        </div>
+        
+    </div>
+</div>
+    
+{% endblock content %}
